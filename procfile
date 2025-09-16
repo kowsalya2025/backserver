@@ -1,1 +1,1 @@
-gunicorn tracker.tracker:application
+gunicorn tracker.wsgi:application
