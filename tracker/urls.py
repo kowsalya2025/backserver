@@ -16,8 +16,8 @@ Including another URLconf
 """
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from api.views import MiniProjectViewSet
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, RegisterView
+from api.views import MiniProjectViewSet, RegisterView  # <-- import your RegisterView
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 router = DefaultRouter()
 router.register(r'projects', MiniProjectViewSet, basename='projects')
@@ -26,6 +26,7 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-     path('api/register/', RegisterView.as_view(), name='register'),
+    path('api/register/', RegisterView.as_view(), name='register'),  # now correct
 ]
+
 
