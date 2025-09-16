@@ -131,7 +131,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CORS_ALLOWED_ORIGINS = [
- "https://frontendapi-sigma.vercel.app",
+    "https://frontendapi-zz3e.vercel.app",
 ]
 
 REST_FRAMEWORK = {
